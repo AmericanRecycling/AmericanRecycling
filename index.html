@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <style>
+      @media screen and (max-width: 767px) { /* Adjust max-width as needed for typical mobile devices */
+  body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+  
+}
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Fira Code', monospace;
+        background-color: #ffffff;
+        color: #1f1f20;
+        background-image: url('img/desktop-background.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      html {
+        overflow-x: hidden;
+      }
+
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .hero-container {
+        max-width: 1440px;
+        min-height: 100vh;
+        margin: 0 auto;
+        position: relative;
+        padding: 20px;
+      }
+
+      .flag-img {
+        position: absolute;
+        top: 18px;
+        left: 477px;
+        width: 468px;
+        height: 348px;
+      }
+
+      .title-group {
+        position: absolute;
+        top: 353px;
+        left: 353px;
+        width: 788px;
+        height: 237px;
+      }
+
+      .brand-logo {
+        position: absolute;
+        top: 54px;
+        left: 0;
+        width: 734px;
+      }
+
+      .signature {
+        position: absolute;
+        top: 0;
+        left: 418px;
+        width: 340px;
+        z-index: 1;
+      }
+
+      .contact-section {
+        position: absolute;
+        top: 567px;
+        left: 341px;
+      }
+
+      .contact-title {
+        width: 284px;
+      }
+
+      .contact-table {
+        border: 0.75px solid #1f1f20;
+        width: 267px;
+        margin-top: -17px;
+        margin-left: 19px;
+        font-size: 12px;
+        line-height: 1.3;
+      }
+
+      .contact-row {
+        display: flex;
+        height: 28px;
+      }
+
+      .contact-value:hover{
+        opacity: 50%;
+      }
+
+      .contact-row:first-child {
+        border-bottom: 0.75px solid #1f1f20;
+      }
+
+      .contact-label {
+        display: flex;
+        align-items: center;
+        padding: 4px 8px;
+        width: 68px;
+        border-right: 0.75px solid #1f1f20;
+        letter-spacing: -1.32px;
+      }
+
+      .contact-icon {
+        width: 14px;
+        height: 14px;
+        margin-right: 3px;
+        flex-shrink: 0;
+      }
+
+      .contact-value {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        margin-left: 10px;
+        z-index: 1;
+      }
+
+      .badge {
+        position: absolute;
+        top: 651px;
+        left: 643px;
+        width: 80px;
+        height: 33px;
+      }
+
+      .badge-background {
+        position: absolute;
+        inset: 0;
+        border: 0.75px solid #1f1f20;
+        border-radius: 16.5px;
+      }
+
+      .badge-icon {
+        position: absolute;
+        top: 5px;
+        left: 4px;
+        width: 24px;
+        height: 24px;
+      }
+
+      .badge-year {
+        position: absolute;
+        top: 9.38px;
+        left: 36.18px;
+        width: 33.38px;
+        height: 15.98px;
+      }
+
+      .tagline {
+        position: absolute;
+        top: 650px;
+        left: 469px;
+        width: 674px;
+        height: 149px;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 1200px) {
+        .hero-container {
+          transform: scale(0.8);
+          transform-origin: top center;
+          min-height: 80vh;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .hero-container {
+          transform: scale(0.65);
+          min-height: 65vh;
+        }
+      }
+
+      @media (max-width: 768px) {
+        body {
+          background-attachment: scroll;
+          background-size: cover;
+          background-position: center top;
+        }
+
+        .hero-container {
+          position: static;
+          transform: none;
+          min-height: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+          padding: 20px;
+          max-width: 100%;
+        }
+
+        .flag-img, .contact-section, .badge, .tagline {
+          position: static;
+          width: auto;
+          height: auto;
+        }
+
+        .flag-img {
+          max-width: 280px;
+          order: 1;
+        }
+
+        .title-group {
+          position: relative;
+          top: auto;
+          left: auto;
+          width: 100%;
+          max-width: 400px;
+          margin: 0 auto;
+          order: 2;
+          height: auto;
+        }
+
+        .brand-logo {
+          width: 100%;
+          display: block;
+          position: relative;
+          z-index: 1;
+          top: auto;
+          left: auto;
+        }
+
+        .signature {
+          position: absolute;
+          top: 0;
+          right: 0;
+          transform: translate(15%, -35%);
+          width: 35%;
+          max-width: 120px;
+          z-index: 2;
+          left: auto;
+        }
+
+        .contact-section {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          order: 3;
+        }
+
+        .contact-title {
+          width: 160px;
+        }
+
+        .contact-table {
+          margin: -8px 0 0 0;
+          width: 240px;
+        }
+
+        .contact-label {
+          width: 60px;
+        }
+
+        .contact-value {
+          font-size: 11px;
+        }
+
+        .badge {
+          position: relative;
+          order: 5;
+        }
+
+        .tagline {
+          max-width: 320px;
+          order: 4;
+          height: auto;
+        }
+
+        .site-footer {
+          margin-top: 20px;
+        }
+      }
+
+      .site-footer {
+        margin-top: 150px;
+        padding: 20px;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 300;
+        background: transparent;
+        color: #1f1f20;
+        position: relative;
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="hero">
+      <div class="hero-container">
+        <img src="img/desktop-flag.png" alt="American flag with a distressed texture" class="flag-img">
+        
+        <div class="title-group">
+          <img src="img/desktop-header.png" alt="AMERICANRECYCLING" class="brand-logo">
+          <img src="img/desktop-byblake.png" alt="Signature" class="signature">
+        </div>
+
+        <div class="contact-section">
+          <img src="img/desktop-conact.png" alt="contact" class="contact-title">
+          <div class="contact-table">
+            <div class="contact-row">
+              <div class="contact-label">
+                <img src="img/desktop-email.png" alt="Email icon" class="contact-icon">
+                <span>EMAIL</span>
+              </div>
+              <div class="contact-value">
+                <a href="mailto:info@americanrecycling.me">info@americanrecycling.me</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-label">
+                <img src="img/desktop-insta.png" alt="Instagram icon" class="contact-icon">
+                <span>INSTA</span>
+              </div>
+              <div class="contact-value">
+                <a href="#" onClick="window.open('https://www.instagram.com/americanrecycling/?hl=en', '_blank')">
+                <span>americanrecycling</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="badge">
+          <div class="badge-background"></div>
+          <img src="img/desktop-recyclelogo.png" alt="Recycle logo" class="badge-icon">
+          <img src="img/2025.png" alt="2025" class="badge-year">
+        </div>
+
+        <img src="img/desktop-hadto.png" alt="you had to be there" class="tagline">
+      </div>
+    </main>
+
+    <footer id="footer" class="site-footer">
+      <p>AmericanRecycling ©2025</p>
+    </footer>
+  </body>
+</html>
